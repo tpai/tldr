@@ -35,3 +35,7 @@
 - Pass client certificate and key for a resource, skipping certificate validation:
 
 `curl --cert {{client.pem}} --key {{key.pem}} --insecure {{https://example.com}}`
+
+- Perform an HTTP request which will return status code and create a file when success.
+
+`curl -fsSL -w '%{http_code}' -o output.json https://example.com/users/1234
